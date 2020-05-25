@@ -40,11 +40,11 @@ En este proyecto encontraras la base del modelo de vistas, usando VUE de forma n
   - Exceptions - Propio de Laravel
   - `Http` - Propio de Laravel, contienen ademas el directorio de los controladores del Framework en `Controllers`
   - `Providers` - Propio de Laravel, ademas contiene los `ServiceProdivers` de cada elemento agregado al Framework
-  - `Repositories` - Directorio de repositorios referentes al proyecto. En la raiz se guardan las interfaces de cada repositorio. Tambien dentro de este directorio crearemos directorios referentes a cada ORM o Motor de BBDD que se utilice, por ejemplo `Eloquent(Laravel)`, `Mongo`, `SqlServer`, etc., dentro de cada directorio se encuentran las implmentaciones de los Repositoy necesarios.
+  - `Repositories` - Directorio de repositorios referentes al proyecto. En la raiz se guardan las interfaces de cada repositorio. Tambien dentro de este directorio crearemos directorios referentes a cada ORM o Motor de BBDD que se utilice, por ejemplo `Eloquent(Laravel)`, `Mongo`, `SqlServer`, etc., dentro de cada directorio se encuentran las implementaciones de los Repositoy necesarios.
   - `Settings` - Directio de clases reutilizables creadas por `DOJO`
 
 ## Uso del Patrón Repository
-Como ya se mencionó anteriormente el directorio `App\Repositories` contendra las interfaces a implmentar para el uso del patrón, por ejemplo
+Como ya se mencionó anteriormente el directorio `App\Repositories` contendra las interfaces a implementar para el uso del patrón, por ejemplo
 ```
 interface ITaskRepository{
     public function all();
@@ -90,7 +90,7 @@ Implementado el repositorio, debemos agregar esto a los ServiceProviders, de la 
 ......
     public function register(){
         /*
-            $this->app->bind('inteface', 'clase que implementa la interface')
+            $this->app->bind('interface', 'clase que implementa la interface')
         */
         $this->app->bind(
             'App\Repositories\ITaskRepository',
