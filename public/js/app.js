@@ -1910,6 +1910,8 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! toastr */ "./node_modules/toastr/toastr.js");
+/* harmony import */ var toastr__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(toastr__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
@@ -1937,10 +1939,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      newKeep: '',
+      nuevatarea: '',
       errors: {}
     };
   },
@@ -1953,14 +1956,14 @@ __webpack_require__.r(__webpack_exports__);
 
       var url = 'tasks';
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(url, {
-        keep: this.newKeep
+        keep: this.nuevatarea
       }).then(function (response) {
         _this.$emit('list');
 
-        _this.newKeep = '';
+        _this.nuevatarea = '';
         _this.errors = [];
         $('#create').modal('hide');
-        toastr.success('Creado con exito');
+        toastr__WEBPACK_IMPORTED_MODULE_1___default.a.success('Creado con exito');
       })["catch"](function (error) {
         _this.errors = error.response.data;
       });
@@ -2070,7 +2073,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var toastr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! toastr */ "./node_modules/toastr/toastr.js");
 /* harmony import */ var toastr__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(toastr__WEBPACK_IMPORTED_MODULE_1__);
-//
 //
 //
 //
@@ -16733,19 +16735,19 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.newKeep,
-                          expression: "newKeep"
+                          value: _vm.nuevatarea,
+                          expression: "nuevatarea"
                         }
                       ],
                       staticClass: "form-control",
                       attrs: { type: "text", name: "keep" },
-                      domProps: { value: _vm.newKeep },
+                      domProps: { value: _vm.nuevatarea },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.newKeep = $event.target.value
+                          _vm.nuevatarea = $event.target.value
                         }
                       }
                     }),
@@ -16846,7 +16848,7 @@ var render = function() {
           }
         }
       },
-      [_vm._v("\n      Editar\n  ")]
+      [_vm._v("\n        Editar\n    ")]
     ),
     _vm._v(" "),
     _c(

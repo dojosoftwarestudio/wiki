@@ -1,6 +1,6 @@
 @extends('app')
+{{-- extender del main template app --}}
 
 @section('content')
-Hola
 	<task-component></task-component>
 @endsection

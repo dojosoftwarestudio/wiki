@@ -27,7 +27,7 @@
             </tr>
         </table>
         <nav aria-label="Page navigation example">
-  <ul class="pagination">
+            <ul class="pagination">
                 <li class="page-item" v-if="pagination.current_page > 1">
                     <a  class="page-link" href="#" @click.prevent="changePage(pagination.current_page - 1)">
                         <span>Atras</span>
@@ -57,7 +57,6 @@
     </div>
  </div>
 </template>
-
 
 <script>
 import axios from 'axios'
@@ -109,7 +108,7 @@ import toastr from 'toastr'
             }
         },
         methods:{
-            getKeeps:function(page){
+            getKeeps: function(page){
                 var url = 'tasks?page='+page
                 axios.get(url).then(response => {
                     this.tasks = response.data.tasks.data,

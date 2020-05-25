@@ -1,8 +1,8 @@
 <template>
   <div>
-  <a href="#" class="btn btn-sm btn-warning" v-on:click.prevent="editKeep(fillKeep)">
-      Editar
-  </a>
+    <a href="#" class="btn btn-sm btn-warning" v-on:click.prevent="editKeep(fillKeep)">
+        Editar
+    </a>
   <form v-on:submit.prevent="updateKeep(fillKeep.id)" method="POST">
   <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -31,7 +31,7 @@
 </template>
 <script>
   import axios from 'axios'
-import toastr from 'toastr'
+  import toastr from 'toastr'
   export default {
     props:{
       fillKeep:{

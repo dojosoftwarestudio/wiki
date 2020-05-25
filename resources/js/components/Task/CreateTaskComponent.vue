@@ -11,7 +11,7 @@
         </div>
         <div class="modal-body">
           	<label for="keep">Tarea </label>
-          	<input type="text" name="keep" class="form-control" v-model="newKeep">
+          	<input type="text" name="keep" class="form-control" v-model="nuevatarea">
           	<span v-for="error in errors" class="bg-danger text-white">
           		{{ error }}
           	</span>
@@ -26,11 +26,11 @@
 </template>
 <script>
 import axios from 'axios'
-
+import toastr from 'toastr'
   export default {
     data(){
       return {
-        newKeep: '',
+        nuevatarea: '',
         errors: {}
       }
     },
@@ -41,10 +41,10 @@ import axios from 'axios'
       createKeep: function(){
         var url = 'tasks'
         axios.post(url, {
-            keep: this.newKeep
+            keep: this.nuevatarea
         }).then( response => {
             this.$emit('list')
-            this.newKeep = ''
+            this.nuevatarea = ''
             this.errors = []
             $('#create').modal('hide')
             toastr.success('Creado con exito')

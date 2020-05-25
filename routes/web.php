@@ -19,7 +19,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', function () {
-    return view('tasks.index');
+	return view('tasks.index');
 });
 /*
 
@@ -30,3 +30,6 @@ Route::get('/', function () {
 
 */
 Route::resource('tasks', 'TaskController', ['except'=> 'show','create', 'edit']);
+
+
+Route::get('/task/formatlist', 'TaskController@listFormat');
